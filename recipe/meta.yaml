@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/romer8/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: 6ddc3fe9a44a98e27caf2292e6126b87a80486375d7dabd253c00cf063b318ed
+  sha256: bd3d923e4bd5aa636aef0da698a7f742add33fff04e16d9b63bed88ed4693905
 
 build:
 
