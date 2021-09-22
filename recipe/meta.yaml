@@ -1,13 +1,14 @@
 {% set name = "pywaterml" %}
-{% set version = "1.2.15" %}
+{% set version = "1.2.18" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/romer8/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: bd3d923e4bd5aa636aef0da698a7f742add33fff04e16d9b63bed88ed4693905
+
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 9fa321080c5a5b9fc2ae0f49734ec6c6b9fa98831cbbddb6579a83c2e7cbe9be
 
 build:
 
@@ -26,7 +27,7 @@ requirements:
     - owslib
     - pandas
     - python
-    - suds-jurko
+    - suds-community
     - scikit-learn ==0.22
     - tslearn
     - xmltodict
