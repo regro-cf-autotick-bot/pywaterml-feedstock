@@ -1,5 +1,5 @@
 {% set name = "pywaterml" %}
-{% set version = "1.2.18" %}
+{% set version = "1.2.20" %}
 
 package:
   name: {{ name|lower }}
@@ -8,12 +8,12 @@ package:
 source:
 
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 9fa321080c5a5b9fc2ae0f49734ec6c6b9fa98831cbbddb6579a83c2e7cbe9be
+  sha256: 2bb9d3eb5941d99cfc87673a1f1afce570cc063d8ab766cac662918f78356ebd
 
 build:
 
   noarch: python
-  number: 0
+  number: 1
   script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
@@ -26,9 +26,7 @@ requirements:
     - numpy
     - owslib
     - pandas
-    - python
     - suds-community
-    - scikit-learn ==0.22
     - tslearn
     - xmltodict
     - cython
@@ -38,6 +36,13 @@ test:
     - pywaterml.waterML
     - pywaterml.auxiliaryMod
     - pywaterml.analyzeData
+
+  source_files:
+    - tests/test_fast.py
+  requires:
+    - pytest
+  commands:
+    - pytest -vv tests/test_fast.py
 
 about:
   home: "https://github.com/romer8/pywaterml"
