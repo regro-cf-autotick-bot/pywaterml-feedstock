@@ -26,9 +26,7 @@ requirements:
     - numpy
     - owslib
     - pandas
-    - python
     - suds-community
-    - scikit-learn ==0.22
     - tslearn
     - xmltodict
     - cython
@@ -38,6 +36,13 @@ test:
     - pywaterml.waterML
     - pywaterml.auxiliaryMod
     - pywaterml.analyzeData
+
+  source_files:
+    - tests/test_fast.py
+  requires:
+    - pytest
+  commands:
+    - pytest -vv tests/test_fast.py
 
 about:
   home: https://github.com/romer8/pywaterml
