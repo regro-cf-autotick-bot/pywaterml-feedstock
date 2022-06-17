@@ -1,5 +1,5 @@
 {% set name = "pywaterml" %}
-{% set version = "1.2.18" %}
+{% set version = "1.2.19" %}
 
 package:
   name: {{ name|lower }}
@@ -8,13 +8,13 @@ package:
 source:
 
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 9fa321080c5a5b9fc2ae0f49734ec6c6b9fa98831cbbddb6579a83c2e7cbe9be
+  sha256: 768285c198dd59f524731724bad87bb22d745641a27814b8547949fc77098df2
 
 build:
 
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -40,11 +40,11 @@ test:
     - pywaterml.analyzeData
 
 about:
-  home: "https://github.com/romer8/pywaterml"
+  home: https://github.com/romer8/pywaterml
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE.txt
-  summary: "The pywaterml is a package that lets you handle WaterML functions such as GetValues, GetSitesInfo, etc. In addition it lets offers extra functions such as mean interpolation for data with gaps"
+  summary: The pywaterml is a package that lets you handle WaterML functions such as GetValues, GetSitesInfo, etc. In addition it lets offers extra functions such as mean interpolation for data with gaps
   doc_url: https://pywaterml.readthedocs.io/en/latest/index.html
   dev_url: https://hydroinformatics.byu.edu/
 
