@@ -1,6 +1,6 @@
 {% set name = "pywaterml" %}
 
-{% set version = "1.2.23" %}
+{% set version = "1.2.25" %}
 
 package:
   name: {{ name|lower }}
@@ -9,7 +9,7 @@ package:
 source:
 
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 36d025f838a246c3b22594a834584832ac38dc900a11d07afebc9cbcb7373726
+  sha256: 61c2631ad33f83ceff1974bee4b069c2f1b0d64f0a2f4d8c0c4abf62707da0cd
 
 build:
 
