@@ -8,22 +8,22 @@ package:
 
 source:
 
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 61c2631ad33f83ceff1974bee4b069c2f1b0d64f0a2f4d8c0c4abf62707da0cd
 
 build:
 
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}
     - pip
     - setuptools
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - numpy
     - owslib
     - pandas
@@ -43,6 +43,7 @@ test:
     - tests/test_fast.py
   requires:
     - pytest
+    - python {{ python_min }}
   commands:
     - pytest -vv tests/test_fast.py
 
